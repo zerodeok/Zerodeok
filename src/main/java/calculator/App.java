@@ -1,5 +1,6 @@
 package calculator;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class App {
@@ -14,8 +15,37 @@ public class App {
 
         System.out.println("사칙연산 기호를 입력하세요: ");
         char ch = sc.next().charAt(0);
+        int answer;
+        switch (ch){
+            case '+':
+                answer = firstInt + secondInt;
+                System.out.println(answer);
+                break;
 
+            case '-':
+                answer = firstInt - secondInt;
+                System.out.println(answer);
+                break;
 
+            case '*':
+                answer = firstInt * secondInt;
+                System.out.println(answer);
+                break;
+
+            case '/':
+                if(secondInt>0) {
+                    answer = firstInt / secondInt;
+                    System.out.println(answer);
+                }else{
+                    System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
+                }
+                break;
+
+            case '%':
+                answer = firstInt % secondInt;
+                System.out.println(answer);
+                break;
+        }
 
 
     }
