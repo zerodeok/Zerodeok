@@ -17,7 +17,9 @@ public class Calculator {
         inquiry.set(index,number);
         return inquiry;
     }
-
+    public void removeResult() {
+        inquiry.remove(0);
+    }
 
 
 
