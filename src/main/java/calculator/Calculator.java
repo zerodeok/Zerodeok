@@ -2,12 +2,19 @@ package calculator;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
+
 
 public class Calculator {
     /* 연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성 */
-    private List<Double> inquiry = new LinkedList<>();
+    private List<Double> inquiry;
     double result;
+
+    public Calculator(){
+        inquiry = new LinkedList<>();
+    }
+
+
+
 
     public List<Double> getResult (){
         return inquiry;
@@ -33,9 +40,7 @@ public class Calculator {
     public void calculate (double firstNum, double secondNum, char ch) throws BadException {
         /* 위 요구사항에 맞게 구현 */
         /* return 연산 결과 */
-        if(ch == '/' && secondNum == 0){
-            throw new BadException();
-        }
+
         switch (ch) {
             case '+':
                 result = firstNum + secondNum;
@@ -54,6 +59,9 @@ public class Calculator {
                 break;
 
             case '/':
+                if( secondNum == 0){
+                    throw new BadException();
+                }
                 result = firstNum / secondNum;
                 System.out.println(result);
                 inquiry.add(result);
