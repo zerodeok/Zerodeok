@@ -20,6 +20,11 @@ public class Calculator {
     public void removeResult() {
         inquiry.remove(0);
     }
+    public void inquiryResults() {
+        for( int i =0 ; i<inquiry.size();i++){
+            System.out.println(i+1+"번째 : "+inquiry.get(i));
+        }
+    }
 
 
 
