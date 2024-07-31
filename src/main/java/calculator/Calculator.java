@@ -8,10 +8,24 @@ public class Calculator {
     /* 연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성 */
     private List<Double> inquiry;
     double result;
+    /* static, final 활용 */
+    final double pi = 3.141592;  //pi값은 변하지 않는 수 이기 때문에 final로 변수를 선언.
+    /* 원의 넓이 결과를 저장하는 컬렉션 타입의 필드 선언 및 생성 */
 
+    /* 생성자 수정 */
     public Calculator(){
         inquiry = new LinkedList<>();
     }
+
+    /* 원의 넓이를 구하는 메서드 선언*/
+
+
+    public void CircleCalculate(double r){
+        result = pi * r * r;
+        System.out.println("결과 : " + result);
+        inquiry.add(result);
+    }
+
 
 
 
